@@ -1,0 +1,127 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: var(--space-3) 0;
+  z-index: var(--z-header);
+  transition: all var(--transition-medium) var(--easing);
+  mix-blend-mode: difference;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  padding: var(--space-2) 0;
+  mix-blend-mode: normal;
+}
+
+.header.bg-black {
+  background: #000 !important;
+  mix-blend-mode: normal;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-4);
+}
+
+.desktop-nav a {
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-1) var(--space-2);
+  position: relative;
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  transition: transform var(--transition-medium) var(--easing);
+}
+
+.desktop-nav a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  transition: all var(--transition-fast) var(--easing);
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--color-accent);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-black);
+  z-index: var(--z-overlay);
+  padding: var(--space-8) var(--space-4);
+}
+
+.mobile-menu nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  margin-bottom: var(--space-4);
+}
+
+.mobile-menu a {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 968px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+}

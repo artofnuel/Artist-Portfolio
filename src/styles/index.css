@@ -1,0 +1,226 @@
+:root {
+  /* Color Variables */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  
+  /* Accent colors for minimal highlights */
+  --color-accent: #d4af37; /* Gold accent */
+  
+  /* Font Variables */
+  --font-primary: 'Archivo', sans-serif;
+  
+  /* Spacing System (8px grid) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 1rem;    /* 16px */
+  --space-4: 1.5rem;  /* 24px */
+  --space-5: 2rem;    /* 32px */
+  --space-6: 3rem;    /* 48px */
+  --space-7: 4rem;    /* 64px */
+  --space-8: 6rem;    /* 96px */
+  
+  /* Animation Variables */
+  --transition-fast: 200ms;
+  --transition-medium: 300ms;
+  --transition-slow: 500ms;
+  --easing: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Z-index layers */
+  --z-background: -1;
+  --z-default: 1;
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-loader: 1000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-600) var(--color-gray-900);
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
+  border-radius: 6px;
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all var(--transition-fast) var(--easing);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Container classes */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.section {
+  padding: var(--space-8) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 800;
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 10vw, 6rem);
+}
+
+.heading-lg {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+}
+
+.heading-md {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.heading-sm {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.subheading {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-medium) var(--easing);
+  border-radius: 0;
+  min-height: 48px;
+  min-width: 180px;
+}
+
+.btn-primary {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.btn-secondary:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursive {
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-6) 0;
+  }
+}

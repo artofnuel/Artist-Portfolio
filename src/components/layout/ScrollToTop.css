@@ -1,0 +1,23 @@
+.scroll-top-btn {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: var(--z-default);
+  transition: all var(--transition-medium) var(--easing);
+}
+
+.scroll-top-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-black);
+  transform: translateY(-5px);
+}

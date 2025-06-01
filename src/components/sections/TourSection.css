@@ -1,0 +1,120 @@
+.tour-section {
+  background-color: var(--color-black);
+  position: relative;
+}
+
+.tour-background-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(6rem, 30vw, 20rem);
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--color-white);
+  opacity: 0.05;
+  letter-spacing: -0.05em;
+  z-index: var(--z-background);
+  pointer-events: none;
+}
+
+.tour-dates-container {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tour-date-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: var(--space-4);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-medium) var(--easing);
+}
+
+.tour-date-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+.tour-date {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tour-venue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tour-venue h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tour-location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-gray-400);
+  font-size: 0.9rem;
+}
+
+.tour-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tour-action .btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  min-width: 150px;
+  justify-content: center;
+  font-size: 0.9rem;
+  min-height: 0;
+}
+
+.tour-status {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tour-status.sold-out {
+  color: var(--color-gray-500);
+}
+
+.btn.limited {
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.btn.limited:hover {
+  background: #f59e0b;
+  color: var(--color-black);
+}
+
+.tour-cta {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .tour-date-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  
+  .tour-action {
+    justify-content: flex-start;
+  }
+  
+  .tour-action .btn {
+    width: 100%;
+  }
+}
